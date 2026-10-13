@@ -1,0 +1,391 @@
+.Banner {
+  color: white;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #111111;
+}
+
+.contents {
+  padding-left: 4%;
+  margin-top: 40px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 5;
+}
+
+/* Iconic Netflix Red Capital 'N' Badge */
+.brandBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  align-self: flex-start;
+  user-select: none;
+}
+
+.brandN {
+  color: #E50914; /* Authentic Netflix Red */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  transform: scaleY(1.15); /* Sleek vertical stretch look */
+  line-height: 1;
+}
+
+.brandType {
+  color: #a3a3a3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Injects extra contrast overlay protection */
+}
+
+.bannerTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.bannerDescription {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 25px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: #e5e5e5;
+}
+
+.bannerButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.bannerButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease;
+}
+
+/* 1. Solid White Play Button */
+.btnPlay {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btnPlay:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* 2. Translucent Gray More Info Button */
+.btnInfo {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #ffffff;
+}
+
+.btnInfo:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+/* Smooth cinematic bottom gradient transition */
+.FadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(17, 17, 17, 0.6),
+    #111111
+  );
+  z-index: 1;
+}
+
+/* Responsive Adaptive Sizing */
+@media (max-width: 768px) {
+  .Banner {
+    height: 65vh;
+  }
+  .bannerTitle {
+    font-size: 2.2rem;
+  }
+  .bannerDescription {
+    font-size: 1rem;
+    max-width: 450px;
+  }
+  .bannerButton {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+  .brandN {
+    font-size: 26px;
+  }
+}
+/* ==========================================================================
+   TRAILER POPUP MODAL OVERLAY STYLES
+   ========================================================================== */
+.videoModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Dims the website layout workspace behind the video window */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Overlays on top of the fixed navigation header row tracks */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.videoModalContent {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* Cinematic theater layout width framework */
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2010;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.closeModalBtn:hover {
+  background-color: rgba(235, 9, 20, 0.9); /* Netflix red accent highlight on button hover */
+  transform: scale(1.05);
+}
+
+/* Aspect-ratio layout box rule for fluid 16:9 widescreen video presentations */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 widescreen height calculation formula */
+  height: 0;
+  width: 100%;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* ==========================================================================
+   SHARED MODAL STRUCTURES (TRAILER & MORE INFO CLOSURE PANEL OVERLAYS)
+   ========================================================================== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  background-color: #181818;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2100;
+  transition: all 0.2s ease;
+}
+
+.closeModalBtn:hover {
+  background-color: rgba(229, 9, 20, 0.9);
+  border-color: #e50914;
+  transform: scale(1.05);
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  width: 100%;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   AUTHENTIC METADATA MORE INFO PANEL SPECIFIC MODAL STYLES
+   ========================================================================== */
+.infoModalCard {
+  animation: modalSlideUp 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.infoModalHero {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.infoModalTitle {
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.infoModalBody {
+  padding: 30px;
+  background-color: #181818;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.infoMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.infoMatch {
+  color: #46d369; /* Authentic Netflix vibrant greens match indicators */
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.infoYear {
+  font-size: 15px;
+  color: #a3a3a3;
+}
+
+.infoBadge {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 3px;
+  color: #e5e5e5;
+  letter-spacing: 0.5px;
+}
+
+.infoFullPlot {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e5e5;
+  margin: 0 0 30px 0;
+}
+
+/* Metadata Technical Attribute Rows */
+.infoTechnicalGrid {
+  border-top: 1px solid #2f2f2f;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a3a3a3;
+  font-size: 14px;
+}
+
+.techItem strong {
+  color: #ffffff;
+}
+
+/* Smooth modal initialization slide transition tracking animations */
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive constraints grid */
+@media (max-width: 768px) {
+  .infoModalHero {
+    height: 180px;
+    padding: 15px;
+  }
+  .infoModalTitle {
+    font-size: 1.5rem;
+  }
+  .infoModalBody {
+    padding: 20px;
+  }
+  .infoFullPlot {
+    font-size: 13px;
+  }
+}

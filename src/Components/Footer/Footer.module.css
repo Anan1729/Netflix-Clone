@@ -1,0 +1,106 @@
+.footer {
+  background-color: #141414;
+  /* Netflix background color */
+  color: #808080;
+  /* Netflix muted text color */
+  padding: 50px 0 20px;
+  /* Top and bottom padding */
+  font-family: Helvetica, sans-serif;
+  /* Matching font family */
+  font-size: 13px;
+  /* Slightly smaller text */
+}
+
+.container {
+  max-width: 980px;
+  /* Matches standard Netflix content width */
+  margin: 0 auto;
+  /* Centers the container */
+  padding: 0 4%;
+  /* Horizontal padding for small screens */
+}
+
+/* Social Icons Styling */
+.socialIconsContainer {
+  display: flex;
+  gap: 25px;
+  /* Spacing between icons */
+  margin-bottom: 30px;
+  /* Spacing below the icon row */
+  color: #fff;
+  /* Icons themselves are white */
+}
+
+.socialIcon {
+  color: #fff;
+  font-size: 20px;
+  /* Icon size */
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  /* Smooth hover effect */
+}
+
+.socialIcon:hover {
+  opacity: 0.8;
+  /* Subtle interaction feedback */
+}
+
+/* Links Grid and List Styling */
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4-column layout on large screens */
+  gap: 20px;
+  /* Spacing between columns and rows */
+  margin-bottom: 20px;
+  /* Spacing below the grid */
+}
+
+.linkList {
+  list-style: none;
+  /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.linkItem {
+  margin-bottom: 12px;
+  /* Vertically spaces the link items */
+}
+
+.link {
+  color: inherit;
+  /* Inherits the muted grey color */
+  text-decoration: none;
+  /* Removes underline */
+}
+
+.link:hover {
+  text-decoration: underline;
+  /* Standard Netflix hover style */
+}
+
+/* Copyright Text Styling */
+.footerText {
+  font-size: 11px;
+  /* Smaller, subtler copyright text */
+  margin-top: 20px;
+}
+
+/* Responsive Breakpoints */
+
+/* Switches to 2 columns on tablets/mid-size screens */
+@media (max-width: 740px) {
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Switches to a single column on mobile devices */
+@media (max-width: 500px) {
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

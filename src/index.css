@@ -1,0 +1,28 @@
+/* ==========================================================================
+   PRODUCTION ENVIRONMENT GLOBAL PORTFOLIO RESETS
+   ========================================================================== */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important; /* Locks out horizontal wobbly scroll pathways completely */
+  background-color: #111111 !important; /* Prevents raw white background flashes */
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px; /* Safely anchors link jumps directly below fixed navigation lines */
+}
+
+/* Vite Root App Container Framework Clearances */
+#root, #app {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important; /* Disables default Vite center grids that warp track boundaries */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}

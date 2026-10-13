@@ -1,0 +1,455 @@
+/* ==========================================================================
+   NETFLIX CARD SYSTEM TRACK COMPONENTS
+   ========================================================================== */
+.cardContainer {
+  position: relative;
+  width: 100%;
+  flex: 0 0 200px;
+  box-sizing: border-box;
+}
+
+.largeCard {
+  flex: 0 0 160px; /* Layout constraint for vertical tall Originals posters */
+}
+
+.cardWrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Base static row card states */
+.poster {
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+}
+
+.largeCard .poster {
+  height: 230px;
+}
+
+/* ==========================================================================
+   PREMIUM HOVER POP-UP PANEL OVERLAYS
+   ========================================================================== */
+.hoverCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 135%; /* Opens width scaling slightly wider for detail workspace layout visibility */
+  background: #181818;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 999;
+  transform: scale(0.85);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Smooth zoom interaction without pushing ambient grid neighbors */
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.15) translateY(-50px) translateX(-12%);
+  pointer-events: auto;
+}
+
+.hoverImage {
+  width: 100%;
+  height: 125px;
+  object-fit: cover;
+  display: block;
+}
+
+.hoverInfo {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #181818;
+}
+
+/* ==========================================================================
+   BUTTONS & CONTROLS INTERACTIVE HUD (CORRECTED ICON EMBED VECTOR PATHS)
+   ========================================================================== */
+.buttonsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.leftButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Base properties for icon items */
+.circleButton {
+  color: #ffffff !important;
+  font-size: 28px !important;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.circleButton:hover {
+  transform: scale(1.1);
+}
+
+/* FIXED PLAY ICON: Forces nested SVG elements to respect transparency bounds */
+.playBtn,
+.circleButton.playBtn {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  fill: currentColor !important;
+  font-size: 30px !important;
+}
+
+.playBtn:hover {
+  filter: brightness(0.8);
+}
+
+.iconButton {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* FIXED PLUS ICON: Formats borders manually without blocking content paths */
+.plusBtn {
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 50% !important;
+  padding: 2px !important;
+  font-size: 20px !important;
+  background-color: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 28px !important;
+  height: 28px !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease;
+}
+
+.plusBtn:hover {
+  border-color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.1);
+}
+
+/* FIXED CHECKED STATE: Targets inner SVG nodes directly to reveal vector lines */
+.checkedBtn,
+.circleButton.checkedBtn {
+  color: #46d369 !important; /* Authentic dynamic Netflix match green overlay */
+  background-color: transparent !important;
+  fill: currentColor !important;
+  font-size: 30px !important;
+}
+
+/* ==========================================================================
+   METADATA & TYPOGRAPHY METRICS
+   ========================================================================== */
+.metadataRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.matchScore {
+  color: #46d369;
+}
+
+.maturityRating {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1px 5px;
+  font-size: 10px;
+  border-radius: 2px;
+  color: #e5e5e5;
+}
+
+.duration {
+  color: #ffffff;
+}
+
+.resolutionBadge {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1px 4px;
+  font-size: 9px;
+  font-weight: 800;
+  border-radius: 2px;
+  color: #a3a3a3;
+}
+
+.cardTitleText {
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   TRAILER MODAL SYSTEM & EXTENDED DETAILS BOX HOOD
+   ========================================================================== */
+.cardModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Higher priority maps player screens above navigation strings */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cardModalContent {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background-color: #141414;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+.cardCloseBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10100;
+  transition: all 0.2s ease;
+}
+
+.cardCloseBtn:hover {
+  background-color: #e50914;
+  border-color: #e50914;
+  transform: scale(1.05);
+}
+
+.cardVideoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Cinema Aspect Ratio calculation formula */
+  height: 0;
+  width: 100%;
+}
+
+.cardVideoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Dropdown Drawer Info Card Style Block */
+.cardDetailBox {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  background-color: #181818;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.8);
+  animation: cardDrawerFadeUp 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.detailBody {
+  padding: 25px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+.detailBody h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.drawerMeta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #a3a3a3;
+}
+
+.detailBody p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e5e5e5;
+  margin: 0 0 20px 0;
+}
+
+.drawerSpecs {
+  border-top: 1px solid #2f2f2f;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.specLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+@keyframes cardDrawerFadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+ /* ==========================================================================
+   GLOBAL SCREEN MODAL OVERLAY TRACK (FIXES ALL ROW CLIPPING OVERLAPS)
+   ========================================================================== */
+.cardGlobalOverlay {
+  position: fixed !important; /* Locks layout boundaries firmly over the whole screen viewport */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.85) !important; /* Dims the layout background tracks beautifully */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 999999 !important; /* Elevates modal directly on top of headers, sidebars, and rows */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cardDetailBox {
+  position: relative;
+  width: 100%;
+  max-width: 650px; /* Authentic theater overview width framework */
+  background-color: #181818;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.9);
+  animation: cardModalSlideUp 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Widescreen Hero Header Graphic Inside the Details Overlay Box */
+.modalBannerHero {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.modalHeroTitle {
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.detailBody {
+  padding: 25px;
+  background-color: #181818;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+.drawerMeta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.metaYear {
+  color: #a3a3a3;
+}
+
+.hdBadge {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 1px 4px;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 2px;
+  color: #a3a3a3;
+}
+
+.plotSummaryText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e5e5e5;
+  margin: 0 0 25px 0;
+}
+
+.drawerSpecs {
+  border-top: 1px solid #2f2f2f;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.specLine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #a3a3a3;
+}
+
+.specLine strong {
+  color: #ffffff;
+}
+
+/* Fluid Animation Setup */
+@keyframes cardModalSlideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalBannerHero { height: 180px; padding: 15px; }
+  .modalHeroTitle { font-size: 1.4rem; }
+  .detailBody { padding: 20px; }
+}
