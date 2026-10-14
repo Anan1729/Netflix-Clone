@@ -11,7 +11,6 @@ A high-fidelity, production-ready, fully responsive **Netflix Clone** landing pa
 *   **Live Multi-Category Slider Rows**: Leverages optimized `Swiper.js` configurations to bundle horizontal carousel structures with smooth navigation transitions.
 *   **Dynamic Search Filter Matrix**: Features an expanding navigation search engine capable of parsing cross-property title fragments (`movie.title`, `movie.name`, `movie.original_name`) and category tags in real time.
 *   **Dynamic Video Trailer Stream Overlay**: Embedded integration with the `react-youtube` library to pull dynamic trailer video codes directly from TMDB registries with text scraper fallbacks.
-*   **Custom Viewport Stacking Correction**: Implements advanced coordinate calculations via `getBoundingClientRect()` to prevent relative slide perspective box clipping when hovering over deep track pages.
 *   **Environment Level Variable Protections**: Complete encapsulation of private infrastructure access tokens using standard `.env` configuration guards to shield developer keys.
 
 ---
@@ -32,7 +31,7 @@ Follow these boundaries to mount and test the execution layout inside your local
 
 1. **Clone the project repository tree:**
    ```bash
-   git clone https://github.com
+   git clone https://github.com/Anan1729/Netflix-Clone.git
    cd Netflix-Clone
    ```
 
