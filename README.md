@@ -33,7 +33,7 @@ Follow these boundaries to mount and test the execution layout inside your local
 1. **Clone the project repository tree:**
    ```bash
    git clone https://github.com
-   cd netflix-clone
+   cd Netflix-Clone
    ```
 
 2. **Install all required node package dependency bundles:**
