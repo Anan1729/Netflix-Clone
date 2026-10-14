@@ -3,7 +3,7 @@
 A high-fidelity, production-ready, fully responsive **Netflix Clone** landing page application built from the ground up using **React (Vite)** and modular CSS components. This application streams content metadata, cinema graphics, and video backdrops seamlessly using live data vectors from the official **TMDB API** registry.
 
 ## 🚀 Live Demo Link
-👉 **[Click Here to View the Live Application](https://nflx-watch-ananya.netlify.app/)** 
+👉 **[Click Here to View the Live Application](https://ananya-media-stream.netlify.app/)** 
 ---
 
 ## ✨ Features & Architecture Highlights
