@@ -70,3 +70,5 @@ This application is a software clone built strictly for **educational, non-comme
 
 ### 📜 Digital Millennium Copyright Act (DMCA) & Fair Use Compliance
 *This repository complies with section 107 of the US Copyright Act, which allows "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. All code written within this repository is original frontend architecture constructed for engineering development study.*
+
+**Created by Ananya Wubshiet — 2026**
