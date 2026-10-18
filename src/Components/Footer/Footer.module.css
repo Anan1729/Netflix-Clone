@@ -87,14 +87,22 @@
   margin-top: 20px;
 }
 .demo-disclaimer-banner {
-  background-color: #e50914; 
-  color: white; 
+  background-color: #141414; /* Matches the exact Netflix background */
+  color: #808080;            /* Soft muted grey text so it isn't distracting */
   text-align: center; 
-  padding: 10px; 
-  font-size: 14px;
-  font-weight: bold;
+  padding: 20px 10px;       /* Adds breathing room on top and bottom */
+  font-size: 13px;          /* Clean, legible, compact size */
+  line-height: 1.5;
+  border-top: 1px solid #222; /* Subtle divider line above the banner */
   width: 100%;
 }
+
+/* Optional: Make the warning icon pop slightly */
+.demo-disclaimer-banner span {
+  color: #e50914;            /* Netflix red color for the icon */
+  margin-right: 5px;
+}
+
 
 /* Responsive Breakpoints */
 
