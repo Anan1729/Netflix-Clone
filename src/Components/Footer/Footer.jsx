@@ -62,7 +62,7 @@ const Footer = () => {
         {/* Footer Text (Copyright/Date) */}
         <p className={styles.footerText}>© 1997-2026 Netflix, Inc.</p>
       </div>
-      <div className="demo-disclaimer-banner">
+      <div className={styles["demo-disclaimer-banner"]}>
         <span>⚠️</span> <strong>Educational Portfolio Project:</strong> This is
         a demo clone built for learning purposes only. It is not affiliated with
         Netflix and does not collect any user data.
