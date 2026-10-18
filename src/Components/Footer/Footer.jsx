@@ -63,9 +63,9 @@ const Footer = () => {
         <p className={styles.footerText}>© 1997-2026 Netflix, Inc.</p>
       </div>
       <div className="demo-disclaimer-banner">
-        ⚠️ Educational Portfolio Project: This is a demo clone built for
-        learning purposes only. It is not affiliated with Netflix and does not
-        collect any user data.
+        <span>⚠️</span> <strong>Educational Portfolio Project:</strong> This is
+        a demo clone built for learning purposes only. It is not affiliated with
+        Netflix and does not collect any user data.
       </div>
     </footer>
   );
