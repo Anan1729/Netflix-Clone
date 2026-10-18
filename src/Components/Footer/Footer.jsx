@@ -62,23 +62,10 @@ const Footer = () => {
         {/* Footer Text (Copyright/Date) */}
         <p className={styles.footerText}>© 1997-2026 Netflix, Inc.</p>
       </div>
-      <div
-        style={{
-          backgroundColor: "#141414",
-          color: "#808080",
-          textAlign: "center",
-          padding: "20px 10px",
-          fontSize: "13px",
-          lineHeight: "1.5",
-          borderTop: "1px solid #222",
-          width: "100%",
-          fontFamily: "Helvetica, Arial, sans-serif",
-        }}
-      >
-        <span style={{ color: "#e50914", marginRight: "5px" }}>⚠️</span>
-        <strong>Educational Portfolio Project:</strong> This is a demo clone
-        built for learning purposes only. It is not affiliated with Netflix and
-        does not collect any user data.
+      <div className="demo-disclaimer-banner">
+        <span>⚠️</span> <strong>Educational Portfolio Project:</strong> This is
+        a demo clone built for learning purposes only. It is not affiliated with
+        Netflix and does not collect any user data.
       </div>
     </footer>
   );
